@@ -23,6 +23,7 @@ requirements:
     - python >=3.6
     - typing_extensions >=3.7.4
     - typing_inspect >=0.7.1
+    - docstring_parser
 
 test:
   imports:
