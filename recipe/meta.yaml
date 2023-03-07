@@ -1,5 +1,5 @@
 {% set name = "typed-argument-parser" %}
-{% set version = "1.7.2" %}
+{% set version = "1.8.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/typed-argument-parser-{{ version }}.tar.gz
-  sha256: 4e44bc79010391cd9dec4b110e1474fedc8919138e93ca91222ea6b3b360daee
+  sha256: 82f7dfda955a047ff9cedd838fd76b8d4d3d07e1c0721b50151146389e758b12
 
 build:
   number: 0
@@ -23,6 +23,7 @@ requirements:
     - python >=3.6
     - typing_extensions >=3.7.4
     - typing_inspect >=0.7.1
+    - docstring_parser
 
 test:
   imports:
