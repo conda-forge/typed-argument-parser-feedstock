@@ -1,5 +1,5 @@
 {% set name = "typed-argument-parser" %}
-{% set version = "1.9.0" %}
+{% set version = "1.10.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/typed-argument-parser-{{ version }}.tar.gz
-  sha256: 7bfa8629849ab89912df1f5a4ecf6feae5de0deaf30914fa6e2733a95abd7c20
+  sha256: d0e463511549f2951df2968b181b856c2e281be1ab1f4471437de08eb4113ef2
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
