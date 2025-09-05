@@ -1,5 +1,5 @@
 {% set name = "typed-argument-parser" %}
-{% set version = "1.10.1" %}
+{% set version = "1.11.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 117c2ef9ad6536d36f84f65eb7be035244c841fea34bd5abf2301a01c8a1ec89
+  sha256: 71a4f7661d1c072101bad014f26cbc2c7cf0e626c51fc7681c66975cc1ecc723
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
