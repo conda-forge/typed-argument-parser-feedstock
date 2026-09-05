@@ -1,0 +1,50 @@
+schema_version: 1
+
+context:
+  name: typed-argument-parser
+  version: "1.12.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
+  sha256: cf5f7cafac869fb9627c4c90394e321c895d58872d865ad2c62e65668d259fa0
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - packaging
+    - python >=${{ python_min }}
+    - typing_inspect >=0.7.1
+    - docstring_parser >=0.15
+
+tests:
+  - python:
+      imports:
+        - tap
+      pip_check: true
+      python_version: ${{ python_min }}
+
+about:
+  license: MIT
+  license_file: LICENSE.txt
+  summary: Typed argument parser for Python
+  description: |
+    Tap is a typed modernization of Python's argparse library.
+  homepage: https://github.com/swansonk14/typed-argument-parser
+  repository: https://github.com/swansonk14/typed-argument-parser
+  documentation: https://github.com/swansonk14/typed-argument-parser
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
